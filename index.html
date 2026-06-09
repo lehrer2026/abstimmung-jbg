@@ -4,17 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JBG – Schülerseite</title>
-    <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.myportfolio.com/636bd201-dd32-4312-b162-3cb35fbf2bb0/4d8aec0f33fbbed0561aaee370e2c40e1759400732.css?h=619b1a384123e38faece9a8d0f13d9f6" type="text/css" />
-    <style>
-        /* Damit der Scroll-Effekt sanft abläuft */
-        html { scroll-behavior: smooth; }    </style>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
 </head>
 <body class="transition-enabled">
-    
-    <div class='page-background-video page-background-video-with-panel'></div>
 
-    <header class="site-header js-site-header js-fixed-nav" data-context="theme.nav">
+    <header class="site-header">
         <nav class="nav-container">
             <div class="gallery-title"><a href="#" class="active">Home</a></div>
         </nav>
@@ -24,55 +18,40 @@
             </div>
         </div>
     </header>
-    <div class="header-placeholder"></div>
 
-    <div class="masthead js-masthead-fixed" data-context="page.masthead">
+    <div class="masthead">
         <div class="masthead-contents">
-            <div class="masthead-text js-masthead-text">
-                <div data-context="page.masthead"><h1 class="main-text rich-text module-text">Kurzer Disclaimer!</h1></div>
-                <div data-context="page.masthead"><p class="main-text rich-text module-text">Das hier ist nicht die offizielle Website des Gymnasium Bramfeld und steht in keiner Verbindung zu dieser Schule.</p></div>
-                <div class="masthead-arrow-container js-masthead-arrow" style="cursor: pointer;">
-                    <div class="masthead-arrow"></div>
-                </div>
+            <div class="masthead-text">
+                <h1>Kurzer Disclaimer!</h1>
+                <p>Das hier ist nicht die offizielle Website des Gymnasium Bramfeld.</p>
+            </div>
+            <div class="masthead-arrow-container js-masthead-arrow" style="cursor: pointer;">
+                <div class="masthead-arrow"></div>
             </div>
         </div>
     </div>
-    <div class="masthead-placeholder"></div>
 
-    <div class="site-wrap cfix js-site-wrap">
-        <div class="site-container">
-            <div class="site-content e2e-site-content">
-                <main>
-                    <section id="voting-bereich" class="project-covers" data-context="page.gallery.covers">
-                        <a class="project-cover js-project-cover-touch hold-space" href="voting/index.html">
-                            <div class="cover-image-wrap">
-                                <div class="cover-image">
-                                    <div class="cover cover-normal">
-                                        <img class="cover__img" src="https://cdn.myportfolio.com/636bd201-dd32-4312-b162-3cb35fbf2bb0/e5229409-95f5-425a-8deb-50a0ab74121d_rwc_135x0x2133x1600x640.jpg?h=b8a100c9b14ad9df5b20d9cd38f7b981">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="details-wrap">
-                                <div class="details">
-                                    <div class="details-inner">
-                                        <div class="title preserve-whitespace">Lehrer-Voting</div>
-                                        <div class="date">2026</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </section>
-
-                    <footer class="site-footer" data-hover-hint="footer">
-                        <div class="footer-text">
-                            <a href="datenschutz/index.html">Datenschutzerklärung</a>
-                            <span style="margin-left:100px;"><a href="kontakt/index.html">Kontakt</a></span>
-                        </div>
-                    </footer>
-                </main>
-            </div>
+<section class="footer-buttons" id="voting-bereich">
+    <a href="voting/index.html" class="action-button-clean">
+        <img src="https://cdn.myportfolio.com/636bd201-dd32-4312-b162-3cb35fbf2bb0/e5229409-95f5-425a-8deb-50a0ab74121d_rwc_135x0x2133x1600x1920.jpg?h=acd0dec66d832af52c1fe8cf4fd3fca6" 
+             alt="Lehrer-Voting" 
+             style="width: 100%; display: block;">
+        
+        <div class="button-info">
+            <h3>LEHRER-VOTING</h3>
+            <p>JETZT ABSTIMMEN</p>
         </div>
-    </div>
+    </a>
+</section>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="datenschutz.html">Datenschutzerklärung</a>
+            <span>|</span>
+            <a href="mailto:deine-email@beispiel.de">Kontakt</a>
+        </div>
+        <p>© 2026 JBG Schülerseite</p>
+    </footer>
 
     <script>
     document.querySelector('.js-masthead-arrow').addEventListener('click', function() {

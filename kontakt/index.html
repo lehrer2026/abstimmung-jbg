@@ -28,19 +28,7 @@
         <p id="status" style="margin-top:20px;"></p>
     </div>
 
-    
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const status = document.getElementById('status');
-            
-            emailjs.sendForm('service_7blwy77', 'template_mf09oze', this) 
-                .then(function() {
-                    status.innerText = "Nachricht erfolgreich gesendet!";
-                    document.getElementById('contact-form').reset();
-                }, function(error) {
-                  <script>  status.innerText = "Fehler: " + JSON.stringify(error);
-                });
-        });
+ 
     </script>
 </body>
 </html>
