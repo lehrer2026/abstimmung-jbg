@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontakt – JBG</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){ emailjs.init("VAz8BAjEU1qbJmwaT"); })(); 
+    </script>
+    <style>
+        body { background: #212121; font-family: 'Open Sans', sans-serif; color: #aaa; }
+        .content { max-width: 600px; margin: 80px auto; padding: 20px; }
+        h2 { color: #fff; margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; background: #1a1a1a; border: 1px solid #333; color: #fff; }
+        button { padding: 10px 20px; background: #fff; color: #000; border: none; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Kontakt</h2>
+        <form id="contact-form">
+            <input type="text" name="from_name" placeholder="Dein Name (kann auch Anonym sein)" required>
+            <input type="email" name="user_email" placeholder="Deine E-Mail (für Rückfragen)">
+            <textarea name="message" placeholder="Deine Nachricht / Notizen" rows="5" required></textarea>
+            <button type="submit">Absenden</button>
+        </form>
+        <p id="status" style="margin-top:20px;"></p>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const status = document.getElementById('status');
+            
+            emailjs.sendForm('service_7blwy77', 'template_mf09oze', this) 
+                .then(function() {
+                    status.innerText = "Nachricht erfolgreich gesendet!";
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    status.innerText = "Fehler: " + JSON.stringify(error);
+                });
+        });
+    </script>
+</body>
+</html>
