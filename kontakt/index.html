@@ -28,7 +28,7 @@
         <p id="status" style="margin-top:20px;"></p>
     </div>
 
-    <script>
+    
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();
             const status = document.getElementById('status');
@@ -38,7 +38,7 @@
                     status.innerText = "Nachricht erfolgreich gesendet!";
                     document.getElementById('contact-form').reset();
                 }, function(error) {
-                    status.innerText = "Fehler: " + JSON.stringify(error);
+                  <script>  status.innerText = "Fehler: " + JSON.stringify(error);
                 });
         });
     </script>

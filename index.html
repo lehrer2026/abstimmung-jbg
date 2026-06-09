@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GyLoh – Schülerseite</title>
+    <title>JBG – Schülerseite</title>
     <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
     <link rel="stylesheet" href="https://cdn.myportfolio.com/636bd201-dd32-4312-b162-3cb35fbf2bb0/4d8aec0f33fbbed0561aaee370e2c40e1759400732.css?h=619b1a384123e38faece9a8d0f13d9f6" type="text/css" />
+    <style>
+        /* Damit der Scroll-Effekt sanft abläuft */
+        html { scroll-behavior: smooth; }    </style>
 </head>
 <body class="transition-enabled">
     
@@ -17,7 +20,7 @@
         </nav>
         <div class="logo-wrap">
             <div class="logo logo-text">
-                <a href="#" class="preserve-whitespace">GyLoh – Schülerseite</a>
+                <a href="#" class="preserve-whitespace">JBG – Schülerseite</a>
             </div>
         </div>
     </header>
@@ -27,8 +30,8 @@
         <div class="masthead-contents">
             <div class="masthead-text js-masthead-text">
                 <div data-context="page.masthead"><h1 class="main-text rich-text module-text">Kurzer Disclaimer!</h1></div>
-                <div data-context="page.masthead"><p class="main-text rich-text module-text">Das hier ist nicht die offizielle Website des Gymnasium Lohbrügge und steht in keiner Verbindung zu dieser Schule.</p></div>
-                <div class="masthead-arrow-container js-masthead-arrow">
+                <div data-context="page.masthead"><p class="main-text rich-text module-text">Das hier ist nicht die offizielle Website des Gymnasium Bramfeld und steht in keiner Verbindung zu dieser Schule.</p></div>
+                <div class="masthead-arrow-container js-masthead-arrow" style="cursor: pointer;">
                     <div class="masthead-arrow"></div>
                 </div>
             </div>
@@ -40,7 +43,7 @@
         <div class="site-container">
             <div class="site-content e2e-site-content">
                 <main>
-                    <section class="project-covers" data-context="page.gallery.covers">
+                    <section id="voting-bereich" class="project-covers" data-context="page.gallery.covers">
                         <a class="project-cover js-project-cover-touch hold-space" href="voting/index.html">
                             <div class="cover-image-wrap">
                                 <div class="cover-image">
@@ -70,6 +73,14 @@
             </div>
         </div>
     </div>
+
+    <script>
+    document.querySelector('.js-masthead-arrow').addEventListener('click', function() {
+        document.querySelector('#voting-bereich').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+    });
+    </script>
 
 </body>
 </html>

@@ -1,6 +1,29 @@
 /* ==========================================================================
+   0. FONT IMPORT (Deine Schriftart)
+   ========================================================================== */
+@font-face {
+    font-family: 'Nighty';
+    src: url('../assets/fonts/Nighty-Regular.woff2') format('woff2'),
+         url('../assets/fonts/Nighty-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Anwendung der Schrift auf die gesamte Seite */
+body, h1, p, .logo, .site-footer {
+    font-family: 'Nighty', sans-serif !important;
+}
+
+
+/* ==========================================================================
    1. GLOBAL RESET & LAYOUT BASE (Aus Portfolio-CDN)
    ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
 .site-header:after, .logo-wrap:after {
   clear: both;
   content: '';
@@ -231,104 +254,67 @@ html, .site-wrap {
    3. HEADER, LOGO & NAVIGATION
    ========================================================================== */
 .site-header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
+  justify-content: center; /* Zentriert den Inhalt (Logo) horizontal */
   background-color: #191919;
   height: 70px;
-  padding-bottom: 0px;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 0px;
+  padding: 0 3%;
   position: fixed;
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 3; }
-  .site-header.on-scroll {
-    -webkit-transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
-    .site-header.on-scroll .logo, .site-header.on-scroll .logo a {
-      color: #a9a9a9; }
-    .site-header.on-scroll .pf-nav-social svg {
-      fill: #a9a9a9;
-      opacity: 1; }
-    .site-header.on-scroll nav .page-title a,
-    .site-header.on-scroll nav .gallery-title a,
-    .site-header.on-scroll nav .project-title a,
-    .site-header.on-scroll nav .link-title a {
-      color: #a9a9a9; }
+  z-index: 3;
+}
+
+.site-header.on-scroll {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.site-header.on-scroll .logo, .site-header.on-scroll .logo a {
+  color: #a9a9a9;
+}
 
 .header-placeholder {
-  display: none; }
+  display: none;
+}
+
+/* Nav-Container ausgeblendet, damit das Logo in der Mitte frei steht */
+.nav-container {
+  display: none;
+}
 
 .logo-wrap {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  max-width: 100%;
+  flex: 0 1 auto;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 0px;
-  padding-top: 0px;
-  width: 40%; }
+  text-align: center;
+  width: auto;
+}
 
 .logo, .logo-secondary {
   clear: both;
-  word-wrap: break-word; }
-  .logo img, .logo-secondary img {
-    max-width: 100%; }
-  .logo a, .logo-secondary a {
-    color: inherit; }
-  .logo .image-link, .logo-secondary .image-link {
-    display: inline-block;
-    max-width: 100%; }
-  .logo .image-rollover, .logo .image-scroll,
-  .logo-secondary .image-rollover, .logo-secondary .image-scroll {
-    display: none; }
-  .logo.logo-text, .logo-secondary.logo-text {
-    width: 100%; }
-  .logo.has-rollover.hoverable:hover .image-link,
-  .logo-secondary.has-rollover.hoverable:hover .image-link {
-    display: none; }
-  .logo.has-rollover.hoverable:hover .image-link.image-rollover,
-  .logo-secondary.has-rollover.hoverable:hover .image-link.image-rollover {
-    display: block; }
-
-.on-scroll .logo.has-scroll .image-normal,
-.on-scroll .logo.has-scroll .image-rollover, 
-.on-scroll .logo-secondary.has-scroll .image-normal,
-.on-scroll .logo-secondary.has-scroll .image-rollover {
-  display: none !important; }
-.on-scroll .logo.has-scroll .image-scroll, 
-.on-scroll .logo-secondary.has-scroll .image-scroll {
-  display: inline-block; }
+  word-wrap: break-word;
+}
+.logo a, .logo-secondary a {
+  color: inherit;
+}
 
 .logo-text {
   margin-left: auto;
   margin-right: auto;
-  text-align: center; }
+  text-align: center;
+}
 
 .logo-image {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  text-align: center; }
-  .logo-image img {
-    max-height: 70px; }
-
-.logo-secondary-text, .logo-secondary-image {
-  float: left;
-  text-align: left; }
-.logo-secondary-image {
-  max-width: 100%; }
+  text-align: center;
+}
+.logo-image img {
+  max-height: 70px;
+}
 
 .logo {
   font-family: nyty;
@@ -336,69 +322,24 @@ html, .site-wrap {
   font-style: normal;
   font-weight: 700;
   line-height: 30px;
-  padding-bottom: 0px;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 0px; }
-  .logo, .logo a {
-    color: #fff; }
-  .logo a:hover {
-    color: #fff;
-    font-style: normal;
-    font-weight: 700; }
-
-.logo-secondary {
-  font-family: nyty;
-  font-size: 22px;
+  padding: 0; /* Padding zurückgesetzt */
+}
+.logo, .logo a {
+  color: #fff;
+}
+.logo a:hover {
+  color: #fff;
   font-style: normal;
-  font-weight: 400;
-  line-height: 22px;
-  padding-bottom: 0px;
-  padding-left: 0%;
-  padding-right: 0%;
-  padding-top: 0px;
-  text-transform: uppercase; }
-  .logo-secondary, .logo-secondary a {
-    color: #cccccc; }
-  .logo-secondary a:hover {
-    color: #cccccc;
-    font-style: normal;
-    font-weight: 400;
-    text-transform: uppercase; }
+  font-weight: 700;
+}
 
+/* Restliche Navigations-Klassen beibehalten für mobile Ansicht */
 nav {
   float: left;
   max-width: 100%;
   width: 30%;
-  padding-left: 0%;
-  padding-right: 0%;
-  text-align: left; }
-  nav .gallery-title, nav .project-title, nav .page-title, nav .link-title {
-    padding-left: 0px;
-    padding-right: 20px;
-    display: inline-block;
-    vertical-align: middle; }
-  nav .gallery-title:first-child, nav .project-title:first-child, nav .page-title:first-child, nav .link-title:first-child {
-    padding-left: 0 !important; }
-  nav .gallery-title:last-child, nav .project-title:last-child, nav .page-title:last-child, nav .link-title:last-child {
-    padding-right: 0 !important; }
-
-  nav .gallery-title a, nav .project-title a, nav .page-title a, nav .link-title a {
-    color: #a9a9a9;
-    font-family: nyty;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px; }
-    nav .gallery-title a:hover, nav .project-title a:hover, nav .page-title a:hover, nav .link-title a:hover {
-      color: #fff;
-      font-style: normal;
-      font-weight: 500; }
-    nav .gallery-title a.active, nav .project-title a.active, nav .page-title a.active {
-      color: #fff;
-      font-style: normal;
-      font-weight: 600; }
-
+  text-align: left;
+}
 /* ==========================================================================
    4. MASTHEAD & HERO AREA
    ========================================================================== */
@@ -611,7 +552,29 @@ nav {
   min-width: 210px !important; }
 
 /* ==========================================================================
-   6. ORIGINAL KEYFRAMES & LIGHTBOX ANIMATIONS (Aus voriger CSS)
+   6. TRANSITIONS & ANIMATIONS
+   ========================================================================== */
+.transition-enabled { opacity: 0; }
+
+.transition-in {
+  -webkit-animation: fade-in 0.4s ease-in forwards;
+  animation: fade-in 0.4s ease-in forwards;
+}
+
+.transition-out {
+  opacity: 1;
+  -webkit-animation: fade-out 0.25s ease-out forwards;
+  animation: fade-out 0.25s ease-out forwards;
+}
+
+@-webkit-keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+
+@-webkit-keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+
+/* ==========================================================================
+   7. ORIGINAL KEYFRAMES & LIGHTBOX ANIMATIONS
    ========================================================================== */
 @-webkit-keyframes rotate-forever {
   0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
@@ -812,47 +775,8 @@ html.lightbox-zoomed #lightbox-img-wrap .lightbox-extra {
 .grid__image-caption, .grid__image-caption-lightbox {
   font-family: nyty; }
 
-@-webkit-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; } }
-@-moz-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; } }
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; } }
-
-@-webkit-keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; } }
-@-moz-keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; } }
-@keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; } }
-
-.transition-enabled { opacity: 0; }
-
-.transition-in {
-  -webkit-animation: fade-in ease-in;
-  animation: fade-in ease-in;
-  -webkit-animation-duration: 0.25s;
-  animation-duration: 0.25s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards; }
-
-.transition-out {
-  opacity: 1;
-  -webkit-animation: fade-out ease-out;
-  animation: fade-out ease-out;
-  -webkit-animation-duration: 0.25s;
-  animation-duration: 0.25s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards; }
-
 /* ==========================================================================
-   7. RESPONSIVE BREAKPOINTS & MOBILE NAVIGATION
+   8. RESPONSIVE BREAKPOINTS & MOBILE NAVIGATION
    ========================================================================== */
 @media (max-width: 1024px) {
   #lightbox-inner-wrap .close {
@@ -990,18 +914,4 @@ html.lightbox-zoomed #lightbox-img-wrap .lightbox-extra {
     .masthead h1 { font-size: 26px; line-height: 26px; margin-bottom: 13px; margin-top: 0px; }
     .masthead p { font-size: 14px; line-height: 20px; margin-bottom: 0px; margin-top: 0px; }
   .masthead-buttons { padding-top: 16px; }
-  .masthead-button + .masthead-button-spacer { display: block; height: 17px; }
-    .masthead-button + .masthead-button-spacer + .masthead-button { margin-left: 0; }
-
-  .pf-nav-social li { padding-top: 0px; padding-bottom: 0px; padding-left: 7px; padding-right: 0px; }
-  .pf-footer-social li { padding-top: 0px; padding-bottom: 20px; padding-left: 0px; padding-right: 10px; }
-  .masthead-social li { padding-top: 26px; padding-bottom: 10px; padding-left: 0px; padding-right: 10px; }
-  .site-footer { font-size: 14px; line-height: 20px; padding-bottom: 41px; padding-top: 41px; }
-
-  .close-responsive-click-area { padding: 40px 10%; }
-  .close-responsive-button { top: 30px; }
-  .logo { font-size: 21px; line-height: 22px; }
-}
-
-@media all and (-ms-high-contrast: none) {
-  .lightbox-link, .lightbox-content.zoomable { cursor: pointer; } }
+  .masthead-button + .masthead-button-spacer { display: block; }
