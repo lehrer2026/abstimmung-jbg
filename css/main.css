@@ -1,22 +1,35 @@
-/* 1. GRUNDGERÜST */
+/* 1. SCHRIFTARTEN LOKAL EINBINDEN */
 @font-face {
     font-family: 'Nighty';
     src: url('../assets/fonts/Nighty-Regular.woff2') format('woff2');
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* 2. GRUNDGERÜST */
 body {
     margin: 0;
     padding: 0;
     background-color: #212121;
     color: #fff;
-    font-family: 'Nighty', sans-serif;
-    letter-spacing: 0.1em;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05em;
     min-height: 100vh;
     padding-top: 80px;
 }
 
-/* 2. HEADER */
+/* 3. ÜBERSCHRIFTEN (Nighty nutzen) */
+h1, h2, h3, h4 {
+    font-family: 'Nighty', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+/* 4. HEADER */
 .site-header {
     position: fixed;
     top: 0;
@@ -36,18 +49,29 @@ body {
 .logo-wrap { flex: 1; text-align: center; }
 .site-header::after { content: ""; flex: 1; }
 
-.site-header a {
+/* Home-Link: Roboto */
+.nav-container a {
     color: white;
     text-decoration: none;
-    font-size: 1.9rem; /* Wieder auf ein normales Maß gesetzt */
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* 3. MASTHEAD & DISCLAIMER */
+/* Logo-Titel: Nighty */
+.logo-text a {
+    font-family: 'Nighty', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+}
+
+/* 5. MASTHEAD & DISCLAIMER */
 .masthead { min-height: 80vh; display: flex; align-items: center; justify-content: center; }
 .masthead-contents { display: flex; flex-direction: column; align-items: center; gap: 40px; text-align: center; }
 
-.masthead-text h1 { font-size: 3.5rem; margin-bottom: 20px; }
-.masthead-text p { font-size: 1.3rem; line-height: 1.6; max-width: 600px; }
+.masthead-text h1 { font-size: 3.5rem; margin-bottom: 20px; font-family: 'Nighty', sans-serif; }
+.masthead-text p { font-size: 1.3rem; line-height: 1.6; max-width: 600px; font-family: 'Roboto', sans-serif; }
 
 .masthead-arrow {
     width: 25px; height: 25px;
@@ -55,7 +79,7 @@ body {
     transform: rotate(45deg); cursor: pointer;
 }
 
-/* 4. VOTING BUTTON (CLEAN) */
+/* 6. VOTING BUTTON */
 .footer-buttons { display: flex; justify-content: center; padding: 60px 20px; }
 
 .action-button-clean {
@@ -75,14 +99,14 @@ body {
     color: white;
 }
 
-.button-info h3 { margin: 0 0 5px 0; font-size: 1.5rem; }
-.button-info p { margin: 0; color: #a9a9a9; font-size: 1rem; }
+.button-info h3 { margin: 0 0 5px 0; font-size: 1.5rem; font-family: 'Nighty', sans-serif; }
+.button-info p { margin: 0; color: #a9a9a9; font-size: 1rem; font-family: 'Roboto', sans-serif; }
 
-/* 5. VOTING FORM SEITE */
+/* 7. VOTING FORM SEITE */
 .voting-container { max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center; }
 .full-page-form { width: 100%; min-height: 2500px; border: none; display: block; margin: 0 auto; }
 
-/* 6. FOOTER */
+/* 8. FOOTER */
 .site-footer {
     text-align: center;
     padding: 40px 20px;
@@ -92,5 +116,5 @@ body {
     margin-top: 50px;
 }
 
-.site-footer a { color: #a9a9a9; text-decoration: none; margin: 0 10px; }
+.site-footer a { color: #a9a9a9; text-decoration: none; margin: 0 10px; font-family: 'Roboto', sans-serif; }
 .site-footer a:hover { color: #ffffff; }

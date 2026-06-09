@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JBG – Schülerseite</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/main.css" type="text/css" />
 </head>
 <body class="transition-enabled">
 
     <header class="site-header">
         <nav class="nav-container">
-            <div class="gallery-title"><a href="#" class="active">Home</a></div>
+            <div class="gallery-title"><a href="#">Home</a></div>
         </nav>
         <div class="logo-wrap">
             <div class="logo logo-text">
@@ -31,35 +36,31 @@
         </div>
     </div>
 
-<section class="footer-buttons" id="voting-bereich">
-    <a href="voting/index.html" class="action-button-clean">
-        <img src="https://cdn.myportfolio.com/636bd201-dd32-4312-b162-3cb35fbf2bb0/e5229409-95f5-425a-8deb-50a0ab74121d_rwc_135x0x2133x1600x1920.jpg?h=acd0dec66d832af52c1fe8cf4fd3fca6" 
-             alt="Lehrer-Voting" 
-             style="width: 100%; display: block;">
-        
-        <div class="button-info">
-            <h3>LEHRER-VOTING</h3>
-            <p>JETZT ABSTIMMEN</p>
-        </div>
-    </a>
-</section>
+    <section class="footer-buttons" id="voting-bereich">
+        <a href="voting/index.html" class="action-button-clean">
+            <img src="https://cdn.myportfolio.com/636bd201-dd32-4312-b162-3cb35fbf2bb0/e5229409-95f5-425a-8deb-50a0ab74121d_rwc_135x0x2133x1600x1920.jpg?h=acd0dec66d832af52c1fe8cf4fd3fca6" 
+                 alt="Lehrer-Voting" 
+                 style="width: 100%; display: block;">
+            <div class="button-info">
+                <h3>LEHRER-VOTING</h3>
+                <p>JETZT ABSTIMMEN</p>
+            </div>
+        </a>
+    </section>
 
     <footer class="site-footer">
         <div class="footer-links">
             <a href="datenschutz.html">Datenschutzerklärung</a>
             <span>|</span>
-            <a href="mailto:deine-email@beispiel.de">Kontakt</a>
+            <a href="kontakt/index.html">Kontakt</a>
         </div>
         <p>© 2026 JBG Schülerseite</p>
     </footer>
 
     <script>
     document.querySelector('.js-masthead-arrow').addEventListener('click', function() {
-        document.querySelector('#voting-bereich').scrollIntoView({ 
-            behavior: 'smooth' 
-        });
+        document.querySelector('#voting-bereich').scrollIntoView({ behavior: 'smooth' });
     });
     </script>
-
 </body>
 </html>
